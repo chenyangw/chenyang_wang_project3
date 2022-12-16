@@ -12,6 +12,17 @@ export default async function handle(req, res) {
 
   if (!session) {
     console.log("no session");
+
+    if (req.method === "GET") {
+      const { id, username } = req.query;
+      const user = id
+        ? await User.findById(id)
+        : await User.findOne({ username });
+      const follow = false;
+      console.log("session", session);
+      res.json({ user, follow });
+    }
+
     return res.send("no session");
   } else {
     if (req.method === "PUT") {
