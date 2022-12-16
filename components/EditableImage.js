@@ -55,7 +55,7 @@ export default function EditableImage({
         {isUploading && (
           <div
             className="absolute inset-0 flex items-center justify-center"
-            style={{ backgroundColor: "#308cd8" }}
+            style={{ backgroundColor: "rgba(48, 140, 216, 0.9)" }}
           >
             <PulseLoader size={14} color={"#ffffff"} />
           </div>
